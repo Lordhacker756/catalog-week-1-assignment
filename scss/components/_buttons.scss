@@ -1,0 +1,48 @@
+@use "../abstract/variables" as *;
+
+.btn {
+  cursor: pointer;
+  padding: $padding-small;
+  border-radius: $border-radius-small;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &__solid {
+    &--primary {
+      background-color: $primary-color;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    &--secondary {
+      background-color: $secondary-color;
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__outline {
+    background-color: $white;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+
+  &__ghost {
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@use "../abstract" as *;
+@use "../utils" as utils;
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-weight: bold;
+  font-family: $font-primary;
+}
+
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  font-family: $font-secondary;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+h2 {
+  color: $secondary-color;
+}
+
+h3 {
+  color: $accent-color;
+}
+
+p {
+  color: $text-color;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: $text-color;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $secondary-color;
+  cursor: pointer;
+}
+
+// Responsive Typography
+h1 {
+  font-size: clamp(1.25rem, 2vw, 3rem); // Minimum, fluid, maximum
+}
+
+h2 {
+  font-size: clamp(1rem, 1.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(0.875rem, 1vw, 1.25rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 1vw, 1.25rem);
+}

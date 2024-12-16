@@ -1,0 +1,32 @@
+[
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "Web development",
+    "description": "Full-stack web application development for a small business website with responsive design and basic e-commerce functionality."
+  },
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "Mobile App Design",
+    "description": "Comprehensive mobile app design for iOS and Android platforms, including user interface and user experience optimization."
+  },
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "E-commerce Platform Setup",
+    "description": "Complete e-commerce solution with product management, payment integration, and custom design for an online retail business."
+  },
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "Corporate Website Redesign",
+    "description": "Professional website redesign with modern layout, SEO optimization, and integration of company branding elements."
+  },
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "Web development",
+    "description": "Full-stack web application development for a small business website with responsive design and basic e-commerce functionality."
+  },
+  {
+    "image": "https://picsum.photos/200/300",
+    "title": "Mobile App Design",
+    "description": "Comprehensive mobile app design for iOS and Android platforms, including user interface and user experience optimization."
+  }
+]

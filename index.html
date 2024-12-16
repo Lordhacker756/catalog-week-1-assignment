@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techno Fevers</title>
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/icons/site.webmanifest" />
+    <!-- Font optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- OG Tags -->
+    <meta
+      name="description"
+      content="A modern website with insightful content and engaging features. Learn more about us!"
+    />
+    <meta
+      name="keywords"
+      content="modern website, web design, SEO-friendly, user experience"
+    />
+    <meta name="author" content="Utkarsh" />
+    <meta property="og:title" content="SCSS Practise Website" />
+    <meta
+      property="og:description"
+      content="Discover the amazing features of this modern SCSS-styled website!"
+    />
+    <meta property="og:image" content="/assets/images/home/about.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" type="module"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <img src="assets/images/logo.svg" alt="Logo" class="navbar__logo" />
+      <ul class="navbar__links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero__title">
+          Instant collaboration for productive projects
+        </h1>
+        <p class="hero__description">
+          We are full-service software company that specilizes in developing
+          complex web solutions
+        </p>
+        <button class="hero__button">Learn More</button>
+      </section>
+
+      <!-- About -->
+      <section class="about">
+        <img
+          class="about__image"
+          src="/assets/images/home/about.jpg"
+          alt="About our team working together"
+        />
+        <div class="about__content">
+          <h2 class="about__title">About Us</h2>
+          <p class="about__description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Accusantium provident harum, beatae velit culpa reprehenderit nihil,
+            eum impedit corporis placeat sint libero aspernatur vitae non et
+            dolorem earum amet. Placeat fugiat nostrum, provident quam et
+            dolorem, aperiam, iste impedit officiis officia similique ab. Quasi
+            corporis officiis sapiente, expedita quae dolor quidem harum
+            explicabo aut esse voluptatibus placeat aperiam numquam, porro
+            repudiandae omnis laudantium magnam.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="services">
+        <h2 class="services__title">Our Services</h2>
+        <div class="services__container"></div>
+      </section>
+
+      <!-- Carousel -->
+      <section class="carousel">
+        <button class="carousel__button carousel__button--left">
+          <img
+            src="/assets/icons/left_arrow.svg"
+            alt="Arrow Left"
+            width="20"
+            height="20"
+          />
+        </button>
+        <div class="carousel__parent">
+          <div class="carousel__container"></div>
+        </div>
+        <button class="carousel__button carousel__button--right">
+          <img
+            src="/assets/icons/right_arrow.svg"
+            alt="Arrow Right"
+            width="20"
+            height="20"
+          />
+        </button>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+    <!-- Preload the links in the user's view-port (Lib by chrome) -->
+    <script>
+      window.addEventListener("load", () => {
+        quicklink.listen();
+      });
+    </script>
+  </body>
+</html>

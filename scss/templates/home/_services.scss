@@ -1,0 +1,64 @@
+@use "../../layouts/flex" as flex;
+@use "../../layouts/grid" as grid;
+@use "../../abstract/variables" as theme;
+@use "../../utils" as utils;
+
+.services {
+  @include flex.flex-container(column, center, center);
+  padding: theme.$padding-large;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.services__container {
+  @include grid.grid-layout(4, 1rem);
+
+  @include utils.breakpoint-down(tablet) {
+    @include grid.grid-layout(2, 1rem);
+  }
+
+  @include utils.breakpoint-down(mobile) {
+    @include grid.grid-layout(1, 1rem);
+  }
+}
+
+.service {
+  box-shadow: theme.$shadow-small;
+  padding: theme.$padding-medium;
+  border-radius: theme.$border-radius-small;
+  border: 1px solid theme.$border-color;
+
+  @include utils.breakpoint-down(tablet) {
+    padding: theme.$padding-small;
+  }
+
+  &__name {
+    text-align: center;
+
+    @include utils.breakpoint(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__cost {
+    text-align: center;
+
+    @include utils.breakpoint(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    text-align: center;
+
+    @include utils.breakpoint(tablet) {
+      text-align: left;
+    }
+
+    @include utils.breakpoint-down(mobile) {
+      text-align: justify;
+    }
+  }
+}

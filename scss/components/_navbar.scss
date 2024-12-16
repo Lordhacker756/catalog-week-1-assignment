@@ -1,0 +1,27 @@
+@use "../abstract/variables" as *;
+@use "../layouts/grid" as grid;
+@use "../layouts/flex" as flex;
+@use "../utils" as utils;
+
+.navbar {
+  @include flex.flex-container(column,center,center);
+  padding: 1rem;
+
+  &__logo {
+    height: utils.rem(50);
+    width: utils.rem(50);
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $secondary-color;
+  }
+
+  &__links {
+    @extend .flex__container;
+    @extend .flex__container--end;
+    gap: 2rem;
+  }
+}

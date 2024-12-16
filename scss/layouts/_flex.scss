@@ -1,0 +1,26 @@
+@use "../abstract/variables" as *;
+
+.flex__container {
+  display: flex;
+  padding: $padding-small;
+  gap: 1rem;
+  max-width: 1000px;
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+@mixin flex-container($direction: row, $justify: center, $align: center) {
+  display: flex;
+  gap: 1rem;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

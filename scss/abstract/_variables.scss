@@ -1,0 +1,29 @@
+// Theme colors
+$primary-color: #e0e0e0; // Lighter, softer gray
+$secondary-color: #F64C72; // A more muted violet
+$accent-color: #ffd700; // A warmer, brighter gold
+$background-color: #f0f0f0; // Very light gray for a softer background
+$text-color: #333;
+$text-color-light: #fff;
+$white: #fff;
+$border-color: #BBC8D4;
+
+// Typography
+$font-primary: "Mulish";
+$font-secondary: "Open Sans";
+
+// Paddings
+$padding-small: 1rem;
+$padding-medium: 2rem;
+$padding-large: 3rem;
+$container-padding: 2rem;
+
+// Border radius
+$border-radius-small: 0.5rem;
+$border-radius-medium: 1rem;
+$border-radius-large: 1.5rem;
+
+// Shadows
+$shadow-small: 0 0 10px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 0 20px rgba(0, 0, 0, 0.2);
+$shadow-large: 0 0 30px rgba(0, 0, 0, 0.3);

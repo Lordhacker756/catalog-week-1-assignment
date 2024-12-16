@@ -1,0 +1,33 @@
+@use "../utils/functions" as *;
+
+$breakpoints-up: (
+  "mobile": rem(320),
+  // Mobile devices
+  "tablet": rem(768),
+  // Tablets
+  "desktop": rem(1024),
+  // Desktop/Laptop
+  "widescreen": rem(1440) // Large desktop monitors,
+);
+
+$breakpoints-down: (
+  "mobile": rem(767.98),
+  // Mobile devices and below
+  "tablet": rem(1023.98),
+  // Tablets and below
+  "desktop": rem(1439.98),
+  // Desktop and below
+  "widescreen": rem(2560) // Widescreen and below,
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

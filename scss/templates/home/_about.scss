@@ -1,0 +1,34 @@
+@use "../../layouts/grid" as grid;
+@use "../../layouts/flex" as flex;
+@use "../../abstract/variables" as theme;
+@use "../../utils" as utils;
+
+.about {
+  @include utils.breakpoint(tablet) {
+    @include grid.grid-layout(2, 1rem);
+  }
+
+  @include grid.grid-layout(1, 1rem);
+
+  &__image {
+    width: 100%;
+    margin: 0 auto;
+
+    @include utils.breakpoint-down(mobile) {
+      width: utils.rem(400);
+    }
+
+    object-fit: cover;
+    padding: theme.$container-padding;
+    border-radius: theme.$border-radius-large;
+
+    &:hover {
+      transform: scale(1.01);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__content {
+    padding: theme.$container-padding;
+  }
+}

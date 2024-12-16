@@ -1,0 +1,22 @@
+@use "../abstract/variables" as theme;
+@use "../utils" as utils;
+
+.grid__container {
+  display: grid;
+  gap: 1rem;
+  padding: theme.$container-padding;
+  max-width: min(1000px, 100% - 40px);
+  margin: 0 auto;
+  grid-template-rows: auto;
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin grid-layout($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}

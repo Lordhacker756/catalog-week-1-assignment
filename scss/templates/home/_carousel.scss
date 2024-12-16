@@ -1,0 +1,96 @@
+@use "../../layouts/flex" as flex;
+@use "../../layouts/grid" as grid;
+@use "../../abstract/variables" as *;
+@use "../../utils/functions" as *;
+
+.carousel {
+  @include flex.flex-container(row, center, center);
+  padding: $padding-large;
+  background-color: $primary-color;
+  position: relative;
+
+  &__button {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    padding: $padding-small;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+
+    height: 40px;
+    width: 40px;
+
+    &--left {
+      position: absolute;
+      left: rem(10);
+    }
+
+    &--right {
+      position: absolute;
+      right: rem(10);
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: calc(95% / 4); // Default for desktop
+    height: rem(400);
+    @media (max-width: 1024px) {
+      width: calc(95% / 3); // Tablet
+    }
+    @media (max-width: 768px) {
+      width: calc(95% / 1); // Mobile
+    }
+
+    border-radius: $border-radius-small;
+    border: 1px solid $secondary-color;
+  }
+
+  &__item-image {
+    width: 100%;
+    height: rem(250);
+    object-fit: cover;
+    border-top-left-radius: $border-radius-small;
+    border-top-right-radius: $border-radius-small;
+  }
+
+  &__item-title {
+    font-weight: 600;
+    padding: 0 $padding-small;
+    color: black;
+    margin-top: rem(10);
+  }
+
+  &__item-description {
+    font-weight: 400;
+    padding: 0 $padding-small $padding-small $padding-small;
+    margin: 0;
+  }
+}
+
+.carousel__container {
+  @include flex.flex-container(row, space-evenly, flex-start);
+  gap: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  transition: all 0.3s ease;
+}
+
+.carousel__parent {
+  overflow: hidden;
+  width: 95%;
+  height: rem(450);
+}
