@@ -3,7 +3,7 @@
 @use "../../abstract/variables" as theme;
 @use "../../utils" as utils;
 
-.services {
+.our_team {
   @include flex.flex-container(column, center, center);
   padding: theme.$padding-large;
 
@@ -12,8 +12,9 @@
   }
 }
 
-.services__container {
+.our_team__container {
   @include grid.grid-layout(4, 1rem);
+  background-color: white;
 
   @include utils.breakpoint-down(tablet) {
     @include grid.grid-layout(2, 1rem);
@@ -24,7 +25,7 @@
   }
 }
 
-.service {
+.our_team__member {
   box-shadow: theme.$shadow-small;
   padding: theme.$padding-medium;
   border-radius: theme.$border-radius-small;
@@ -42,13 +43,6 @@
     }
   }
 
-  &__cost {
-    text-align: center;
-
-    @include utils.breakpoint(tablet) {
-      text-align: left;
-    }
-  }
 
   &__description {
     text-align: center;

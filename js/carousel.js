@@ -1,4 +1,4 @@
-import data from '../constants/carousel.json';
+import data from '../constants/teams.json';
 
 const CAROUSEL_ITEM_COUNT = data.length;
 let currIdx = 0;
@@ -10,13 +10,14 @@ const maxIdx = () => {
 };
 
 const loadAndRender = (carouselContainer) => {
-    data.forEach(({ image, title, description: desc }) => {
+    data.forEach(({ name, role, description: desc, path }) => {
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel__item');
 
         carouselItem.innerHTML = `
-            <img class="carousel__item-image" src="${image}" alt="${title}" />
-            <h3 class="carousel__item-title">${title}</h3>
+            <img class="carousel__item-image" src=  "${path}" alt="${name}" />
+            <h3 class="carousel__item-title">${name}</h3>
+            <p class="carousel__item-role">${role}</p>
             <p class="carousel__item-description">${desc}</p>
         `;
 

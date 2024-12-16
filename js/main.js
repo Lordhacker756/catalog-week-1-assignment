@@ -1,4 +1,4 @@
-import render from './renderServices'
+import render from './renderTeamMembers'
 import initCarousel from './carousel';
 
 document.addEventListener('DOMContentLoaded', () => {
