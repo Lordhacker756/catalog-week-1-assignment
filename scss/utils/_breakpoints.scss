@@ -11,13 +11,14 @@ $breakpoints-up: (
 );
 
 $breakpoints-down: (
-  "mobile": rem(767.98),
   // Mobile devices and below
-  "tablet": rem(1023.98),
+  "mobile": rem(767.98),
   // Tablets and below
-  "desktop": rem(1439.98),
+  "tablet": rem(1023.98),
   // Desktop and below
-  "widescreen": rem(2560) // Widescreen and below,
+  "desktop": rem(1439.98),
+  // Widescreen and below,
+  "widescreen": rem(2560) 
 );
 
 @mixin breakpoint($size) {
