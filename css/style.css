@@ -24,7 +24,6 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  font-weight: bold;
   font-family: "Mulish";
 }
 
@@ -42,7 +41,7 @@ h1 {
 }
 
 h2 {
-  color: #F64C72;
+  color: black;
 }
 
 h3 {
@@ -72,7 +71,9 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1rem, 1.5vw, 2.5rem);
+  font-size: clamp(1rem, 3rem, 3rem);
+  font-weight: 400;
+  position: relative;
 }
 
 h3 {
@@ -96,13 +97,13 @@ p {
   align-items: center;
 }
 
-.flex__container, .navbar__links {
+.flex__container, .about__feature--icon, .navbar__links {
   display: flex;
   padding: 1rem;
   gap: 1rem;
   max-width: 1000px;
 }
-.flex__container--center {
+.flex__container--center, .about__feature--icon {
   justify-content: center;
   align-items: center;
 }
@@ -188,13 +189,13 @@ p {
 }
 @media (min-width: 48rem) {
   .hero {
-    height: 40vh;
+    height: 60vh;
     padding: 3rem;
   }
 }
 @media (min-width: 64rem) {
   .hero {
-    height: 80vh;
+    height: 90vh;
   }
 }
 .hero__title {
@@ -282,35 +283,123 @@ p {
 }
 
 .about {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
   gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  width: 70%;
+  box-shadow: 0px 10px 15px 0px rgba(126, 97, 97, 0.25);
+  margin: -4% auto 0 auto;
+  background-color: white;
 }
-@media (min-width: 48rem) {
+@media (max-width: 63.99875rem) {
   .about {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    width: 100%;
+    padding: 3rem;
   }
 }
-.about__image {
-  width: 100%;
-  margin: 0 auto;
-  object-fit: cover;
-  padding: 2rem;
-  border-radius: 1.5rem;
+.about__underline {
+  background: #F64C72;
+  width: 80%;
+  height: 2px;
+}
+.about__title--heading {
+  margin-bottom: 0.625rem;
+}
+.about__title--div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about__description {
+  color: rgb(109, 125, 139);
+  text-align: center;
+  width: 85%;
+  line-height: 1.8125rem;
+  font-size: 1.125rem;
+}
+.about__features {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 63.99875rem) {
+  .about__features {
+    width: 100vw;
+    padding: 3rem 0 0 0;
+  }
+}
+@media (max-width: 63.99875rem) and (max-width: 63.99875rem) {
+  .about__features {
+    justify-content: space-evenly;
+  }
+}
+.about__feature {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: auto; /* Or a specific width that accommodates the steps and spacing */
+  flex-wrap: nowrap;
+}
+.about__feature:not(:last-child) {
+  margin-right: 10px;
+}
+.about__feature--icon {
+  position: relative;
+  border: 1px solid rgb(37, 49, 60);
+  padding: 1rem;
+  border-radius: 100%;
+  height: 3.75rem;
+  width: 3.75rem;
 }
 @media (max-width: 47.99875rem) {
-  .about__image {
-    width: 25rem;
+  .about__feature--icon {
+    display: none;
   }
 }
-.about__image:hover {
-  transform: scale(1.01);
-  transition: all 0.3s ease-in-out;
+.about__feature--icon::before, .about__feature--icon::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(37, 49, 60);
+  height: 1px;
+  width: 100px;
 }
-.about__content {
-  padding: 2rem;
+.about__feature--icon::before {
+  transform: translateX(-80%);
+}
+@media (max-width: 63.99875rem) {
+  .about__feature--icon::before {
+    transform: translateX(-80%);
+  }
+}
+.about__feature--icon::after {
+  transform: translateX(80%);
+}
+@media (max-width: 63.99875rem) {
+  .about__feature--icon::after {
+    transform: translateX(80%);
+  }
+}
+.about__feature--title {
+  text-transform: uppercase;
+  color: rgb(109, 125, 139);
+  margin-top: 0;
+  font-size: 1.125rem;
+  width: 60%;
+  margin-left: auto;
+}
+@media (max-width: 47.99875rem) {
+  .about__feature--title {
+    display: none;
+  }
 }
 
 .services {
@@ -478,4 +567,140 @@ p {
   overflow: hidden;
   width: 95%;
   height: 28.125rem;
+}
+
+.specialities {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+.specialities__card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 15px 0px rgba(6, 0, 0, 0.25);
+  width: 21.875rem;
+  padding: 2rem;
+  z-index: 10;
+  background-color: white;
+}
+.specialities__card--title {
+  font-size: 1.625rem;
+  font-weight: 400;
+  color: rgb(85, 61, 103);
+  margin-bottom: 0;
+}
+.specialities__card--description {
+  text-align: center;
+  color: rgba(73, 92, 118, 0.7);
+}
+
+.achievements {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  background-color: #F64C72;
+  transform: translateY(-20%);
+}
+.achievements__title {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0;
+}
+.achievements__description {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  width: 60%;
+}
+.achievements__stats {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+  gap: 3rem;
+}
+.achievements__stat--value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+.achievements__stat--title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.what_we_do {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.what_we_do__heading {
+  width: 30%;
+  text-align: center;
+}
+.what_we_do--title {
+  margin-bottom: 0.625rem;
+}
+.what_we_do--title-underline {
+  background: #F64C72;
+  height: 2px;
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+.what_we_do__cards {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+.what_we_do__card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 15px 0px rgba(6, 0, 0, 0.25);
+  width: 21.875rem;
+  padding: 2rem;
+  z-index: 10;
+  background-color: white;
+}
+.what_we_do__card--title {
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: rgb(85, 61, 103);
+  margin-bottom: 0;
+}
+.what_we_do__card--description {
+  text-align: center;
+  color: rgba(73, 92, 118, 0.7);
 }/*# sourceMappingURL=style.css.map */

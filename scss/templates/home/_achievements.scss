@@ -1,0 +1,53 @@
+@use '../../layouts/flex' as flex;
+@use '../../abstract/variables' as *;
+@use '../../utils/' as utils;
+
+
+.achievements{
+    @include flex.flex-container(column, center, center);
+    padding: $padding-large;
+    gap: 2rem;
+    background-color: $secondary-color;
+    transform: translateY(-20%);
+
+    
+    &__title{
+        margin-top: utils.rem(80);
+        font-size: utils.rem(40);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    &__description{
+        font-size: utils.rem(18);
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        width: 60%;
+    }
+
+    &__stats{
+        @include flex.flex-container(row, space-around, center);
+        width: 80%;
+        padding: $padding-medium;
+        gap: 3rem
+
+    }
+
+    &__stat{
+         &--value{
+            font-size: utils.rem(40);
+        font-weight: 700;
+        color: white;
+        margin: 0;
+        }
+
+        &--title{
+            font-size: utils.rem(14);
+        font-weight: 400;
+        color: white;
+        margin: 0;
+        }
+    }
+}

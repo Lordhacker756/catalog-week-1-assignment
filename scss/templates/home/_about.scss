@@ -4,31 +4,123 @@
 @use "../../utils" as utils;
 
 .about {
-  @include utils.breakpoint(tablet) {
-    @include grid.grid-layout(2, 1rem);
-  }
+  @include flex.flex-container(column, center, center);
+  padding: theme.$padding-large;
+  width: 70%;
+  box-shadow: 0px 10px 15px 0px rgba(126, 97, 97, 0.25);
+  margin: -4% auto 0 auto;
+  background-color: white;
 
-  @include grid.grid-layout(1, 1rem);
-
-  &__image {
+    @include utils.breakpoint-down(tablet) {
     width: 100%;
-    margin: 0 auto;
+    padding: theme.$padding-large;
+  }
 
-    @include utils.breakpoint-down(mobile) {
-      width: utils.rem(400);
+    &__underline{
+    background: theme.$secondary-color;
+    width: 80%;
+    height: 2px;
+  }
+
+  &__title{  
+    &--heading{
+      margin-bottom: utils.rem(10);
     }
-
-    object-fit: cover;
-    padding: theme.$container-padding;
-    border-radius: theme.$border-radius-large;
-
-    &:hover {
-      transform: scale(1.01);
-      transition: all 0.3s ease-in-out;
+    &--div{
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
   }
 
-  &__content {
-    padding: theme.$container-padding;
+
+  &__description {
+    color:rgba(109, 125, 139, 1);
+    text-align: center;
+    width: 85%;
+    line-height: utils.rem(29);
+    font-size: utils.rem(18);
+  }
+
+  &__features{
+    @include flex.flex-container(row, center, center);
+
+      @include utils.breakpoint-down(tablet) {
+    width: 100vw;
+    padding: theme.$padding-large 0 0 0;
+    @include utils.breakpoint-down(tablet) {
+     justify-content: space-evenly;
+  }
+  }
+  }
+
+  &__feature{
+    @include flex.flex-container(column, center, center);
+    margin: 0;
+
+    &:not(:last-child){
+      margin-right: 10px
+    }
+
+    width: auto; /* Or a specific width that accommodates the steps and spacing */
+  flex-wrap: nowrap;
+
+  
+    
+    &--icon{
+      @extend .flex__container, .flex__container--center;
+      
+            @include utils.breakpoint-down(mobile){
+        display: none;
+      }
+      
+      position: relative;
+      border: 1px solid rgba(37, 49, 60, 1);
+      padding: theme.$padding-small;
+      border-radius: 100%;
+      height: utils.rem(60);
+      width: utils.rem(60);
+
+          &::before, &::after{
+      content: "";
+      position: absolute;
+      background-color: rgba(37, 49, 60, 1);
+      height: 1px;
+      width: 100px;
+
+
+    }
+
+    &::before{
+      transform: translateX(-80%);
+
+       @include utils.breakpoint-down(tablet) {
+        transform: translateX(-80%);
+  }
+    }
+    &::after{
+      transform: translateX(80%);
+
+       @include utils.breakpoint-down(tablet) {
+        transform: translateX(80%);
+  }
+    }
+
+    }
+
+    &--title{
+      text-transform: uppercase;
+      color: rgba(109, 125, 139, 1);
+      margin-top: 0;
+      font-size: utils.rem(18);
+      width: 60%;
+      margin-left: auto;
+
+                  @include utils.breakpoint-down(mobile){
+        display: none;
+      }
+    }
+
   }
 }
