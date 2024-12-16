@@ -6,35 +6,95 @@
 
 .hero {
   @include flex.flex-container(column, center, center);
-
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: rgba(109, 83, 87, 0.5),
     url("/assets/images/home/hero-bg.png") no-repeat center center/cover;
   color: theme.$secondary-color;
-  padding: theme.$padding-large;
-  height: 40vh;
+  padding: theme.$padding-medium;
+  height: 60vh;
   text-align: center;
+  width: 100%;
 
+  // Tablet
+  @include utils.breakpoint(tablet) {
+    height: 40vh;
+    padding: theme.$padding-large;
+  }
+
+  // Desktop
   @include utils.breakpoint(desktop) {
     height: 80vh;
   }
 
   &__title {
     font-weight: 700;
-    font-size: utils.rem(48);
+    font-size: utils.rem(28);
     color: theme.$text-color-light;
-    width: 45%;
-    margin-bottom: 0;
+    width: 90%;
+    margin-bottom: utils.rem(16);
+
+    @include utils.breakpoint(tablet) {
+      font-size: utils.rem(36);
+      width: 80%;
+    }
+
+    @include utils.breakpoint(desktop) {
+      font-size: utils.rem(48);
+      width: 45%;
+    }
   }
 
   &__description {
-    font-size: utils.rem(18);
-    font-weight: 700;
+    font-size: utils.rem(16);
+    font-weight: 600;
     color: theme.$text-color-light;
-    width: 45%;
+    width: 90%;
+    margin-bottom: utils.rem(24);
+
+    @include utils.breakpoint(tablet) {
+      font-size: utils.rem(18);
+      width: 80%;
+    }
+
+    @include utils.breakpoint(desktop) {
+      width: 45%;
+    }
   }
 
-  &__button {
-    @extend .btn;
-    @extend .btn__solid--secondary;
+  &__cta {
+    @include flex.flex-container(column, center, center);
+    width: 90%;
+    gap: utils.rem(16);
+
+    @include utils.breakpoint(tablet) {
+      @include flex.flex-container(row, center, center);
+      width: 80%;
+      gap: utils.rem(16);
+    }
+
+    @include utils.breakpoint(desktop) {
+      width: 40%;
+    }
+
+    &--email {
+      border: 2px solid theme.$border-color;
+      outline: 0;
+      width: 100%;
+      padding: utils.rem(12) theme.$padding-small;
+      border-radius: 2px;
+
+      @include utils.breakpoint(tablet) {
+        flex: 1;
+      }
+    }
+
+    &--button {
+      @extend .btn__solid--secondary, .btn;
+      border-radius: utils.rem(4);
+      width: 100%;
+
+      @include utils.breakpoint(tablet) {
+        width: auto;
+      }
+    }
   }
 }
