@@ -410,8 +410,17 @@ p {
   align-items: center;
   padding: 3rem;
 }
-.our_team__title {
+.our_team__heading--title {
   text-align: center;
+  margin-bottom: 0.625rem;
+}
+.our_team__heading--underline {
+  background: #F64C72;
+  width: 80%;
+  height: 2px;
+  display: block;
+  margin: auto;
+  margin-bottom: 2.5rem;
 }
 
 .our_team__container {

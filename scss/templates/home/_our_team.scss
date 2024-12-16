@@ -6,9 +6,21 @@
 .our_team {
   @include flex.flex-container(column, center, center);
   padding: theme.$padding-large;
-
-  &__title {
-    text-align: center;
+ 
+  &__heading{
+  
+    &--title {
+      text-align: center;
+      margin-bottom: 0.625rem;
+    }
+      &--underline{
+    background: theme.$secondary-color;
+    width: 80%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    margin-bottom: utils.rem(40)
+  }
   }
 }
 
