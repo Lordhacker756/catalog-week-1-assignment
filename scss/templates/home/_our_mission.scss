@@ -1,0 +1,45 @@
+@use '../../layouts/flex' as flex;
+@use '../../layouts/grid' as grid;
+@use '../../abstract/variables' as *;
+@use '../../utils/' as utils;
+@use '../../components/buttons' as buttons;
+
+.our_mission{
+      @include grid.grid-layout(2, 0);
+        margin-top: utils.rem(120);
+
+        &__left{
+            &--banner{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__right{
+            background-color: $secondary-color;
+            @include flex.flex-container(column, center, center);
+
+            &--title{
+                 margin-top: utils.rem(80);
+        font-size: utils.rem(40);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0;
+        text-align: center;
+            }
+
+            &--description{
+               width: 70%;
+            font-size: utils.rem(18);
+        font-weight: 400;
+        color: white;
+        text-align: center;
+            }
+
+            &--button{
+                @extend .btn, .btn__outline
+            }
+        }
+
+}

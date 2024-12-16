@@ -134,7 +134,7 @@ p {
   gap: 2rem;
 }
 
-.btn, .hero__cta--button {
+.btn, .our_mission__right--button, .hero__cta--button {
   cursor: pointer;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
@@ -155,14 +155,14 @@ p {
 .btn__solid--secondary:hover, .hero__cta--button:hover {
   background-color: #e0e0e0;
 }
-.btn__outline {
-  background-color: #fff;
-  color: #e0e0e0;
-  border: 1px solid #e0e0e0;
+.btn__outline, .our_mission__right--button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #fff;
 }
-.btn__outline:hover {
+.btn__outline:hover, .our_mission__right--button:hover {
   background-color: #e0e0e0;
-  color: #fff;
+  color: #F64C72;
 }
 .btn__ghost {
   background-color: transparent;
@@ -703,4 +703,39 @@ p {
 .what_we_do__card--description {
   text-align: center;
   color: rgba(73, 92, 118, 0.7);
+}
+
+.our_mission {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 7.5rem;
+}
+.our_mission__left--banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.our_mission__right {
+  background-color: #F64C72;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.our_mission__right--title {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0;
+  text-align: center;
+}
+.our_mission__right--description {
+  width: 70%;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
