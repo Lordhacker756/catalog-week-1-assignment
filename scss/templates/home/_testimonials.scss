@@ -1,0 +1,76 @@
+@use "../../layouts/flex" as flex;
+@use "../../layouts/grid" as grid;
+@use "../../abstract/variables" as theme;
+@use "../../utils" as utils;
+@use "../home/carousel" as carousel;
+
+.testimonials{
+      @include flex.flex-container(column, center, center);
+  padding: theme.$padding-large;
+  margin-bottom: utils.rem(100);
+ 
+  &__heading{
+  
+    &--title {
+      text-align: center;
+      margin-bottom: 0.625rem;
+    }
+      &--underline{
+    background: theme.$secondary-color;
+    width: 80%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    margin-bottom: utils.rem(40)
+  }
+  }
+
+  &__cards{
+    @extend .carousel__container;
+  }
+
+  &__card{
+    @extend .carousel__item;
+    padding: theme.$padding-small;
+    height: utils.rem(320) !important;
+    @include flex.flex-container(column, center, flex-start);   
+
+    &--person-container{
+        @include flex.flex-container(row, flex-start, center);
+        margin-bottom: utils.rem(20);
+    }
+        &--person{
+            @include flex.flex-container(column, flex-start, center);
+
+            gap: 0.5rem;
+            
+            &-name{
+                color: rgba(109, 125, 139, 1);
+                font-weight: 600;
+                font-size: utils.rem(16);
+                margin: 0;
+            }
+            
+            &-role{
+                color: rgba(109, 125, 139, 1);
+                font-size: utils.rem(14);
+                margin: 0;
+            }
+        }
+
+        &--image{
+            width: utils.rem(30);
+            height: utils.rem(30);
+            border-radius: 50%;
+            margin-right: utils.rem(20);
+        }
+    
+
+  }
+}
+
+.testimonials__carousel__parent {
+  overflow: hidden;
+  width: 95%;
+  height: utils.rem(350);
+}

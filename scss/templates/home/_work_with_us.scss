@@ -1,0 +1,44 @@
+@use '../../layouts/flex' as flex;
+@use '../../abstract/variables' as *;
+@use '../../utils/' as utils;
+@use "../../abstract/variables" as theme;
+
+
+.work_with_us{
+    @include flex.flex-container(column, center, center);
+    padding: $padding-large;
+    gap: 2rem;
+    background-color: $secondary-color;
+    transform: translateY(-20%);
+
+    
+    &--title{
+        margin-top: utils.rem(80);
+        font-size: utils.rem(40);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    &--description{
+        font-size: utils.rem(18);
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        width: 60%;
+    }
+
+    &--email {
+      border: 2px solid theme.$border-color;
+      outline: 0;
+      width: 30%;
+      padding: utils.rem(12) theme.$padding-small;
+      border-radius: 2px;
+
+      @include utils.breakpoint(tablet) {
+        flex: 1;
+      }
+    }
+
+ 
+}

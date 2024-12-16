@@ -36,6 +36,7 @@
             padding: $padding-medium;
             z-index: 10;
             background-color: white;
+            height: utils.rem(400);
 
             &--title{
                 font-size: utils.rem(22);

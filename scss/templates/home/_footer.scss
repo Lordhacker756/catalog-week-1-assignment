@@ -1,0 +1,21 @@
+@use '../../layouts/flex' as flex;
+@use '../../abstract/variables' as *;
+@use '../../utils/' as utils;
+
+
+.footer{
+    @include flex.flex-container(row, space-between, center);
+    padding: 0 $padding-large $padding-large $padding-large;
+
+    &__left--text{
+        color: rgba(85, 61, 103, 1);
+        font-size: utils.rem(14);
+    }
+
+    &__right--icon{
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        margin-left: 1rem;
+    }
+}
