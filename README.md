@@ -1,6 +1,8 @@
 # Techno Fevers Website
 
-A modern, optimized, and SEO-friendly website built with HTML, SCSS, and vanilla JavaScript.
+A modern, optimized, and SEO-friendly website built with HTML, SCSS, and vanilla JavaScript. Using parcel as a bundler, it's assets are fully optimized for production. It also takes into account, the use of features like prefetching, using Quicklinks by chrome to automatically fetch the data in the links of the user's viewport.
+
+All the sizing was done in rem using the SASS function, and the layouts are made available using mixins. The semantic tags, and the OG meta-tags help keep the site SEO Friendly as possible.
 
 ## Performance Optimizations
 
@@ -17,13 +19,12 @@ A modern, optimized, and SEO-friendly website built with HTML, SCSS, and vanilla
 - Event delegation for better performance
 - Lazy loading of team members and testimonials
 - Efficient carousel implementation with DOM reuse
-- Debounced resize event handlers
 - Asynchronous component rendering
 
 ### 3. Asset Optimizations
 - SVG icons for crisp rendering and small file size
 - Responsive images with appropriate sizing
-- Webp image format support
+- Automatic asset optimization using Parcel
 - Proper image alt texts for accessibility
 - Asset preloading for critical resources
 

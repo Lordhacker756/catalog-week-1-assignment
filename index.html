@@ -47,23 +47,23 @@
       content="Discover the amazing features of this modern SCSS-styled website!"
     />
     <meta property="og:image" content="/assets/images/home/about.jpg" />
-    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:url" content="https://taupe-pixie-d0099c.netlify.app/" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="./js/main.js" type="module"></script>
   </head>
   <body>
-    <header class="navbar">
+    <header class="navbar" role="banner">
       <img src="assets/images/logo.svg" alt="Logo" class="navbar__logo" />
-      <ul class="navbar__links">
-        <li><a href="#">Home</a></li>
+      <ul class="navbar__links" aria-label="main-navigation">
+        <li><a href="#" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
-      <div class="navbar__mobile-menu">
+      <div class="navbar__mobile-menu" aria-label="mobile-navigation">
         <ul class="navbar__mobile-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -77,9 +77,9 @@
         <img src="assets/icons/hamburger.svg" alt="Menu" class="navbar__menu" />
       </button>
     </header>
-    <main>
+    <main aria-label="main-content">
       <!-- Hero -->
-      <section class="hero">
+      <section class="hero" aria-label="hero">
         <h1 class="hero__title">
           Instant collaboration for productive projects
         </h1>
@@ -94,13 +94,16 @@
             name="email"
             id="email"
             placeholder="Email"
+            aria-label="Enter your email"
           />
-          <button class="hero__cta--button">Get in touch</button>
+          <button class="hero__cta--button" aria-label="get in touch">
+            Get in touch
+          </button>
         </div>
       </section>
 
       <!-- About -->
-      <section class="about" id="about">
+      <section class="about" id="about" aria-label="about-us">
         <div class="about__title--div">
           <h2 class="about__title--heading">About Us</h2>
           <span class="about__underline"></span>
@@ -140,10 +143,10 @@
       </section>
 
       <!-- Specialities -->
-      <section class="specialities"></section>
+      <section class="specialities" aria-label="our-specialities"></section>
 
       <!-- Our Achievements -->
-      <div class="achievements">
+      <div class="achievements" aria-label="our-achievements">
         <h3 class="achievements__title">OUR ACHIEVEMENTS</h3>
         <p class="achievements__description">
           They all live tidily together in teams. with your team and information
@@ -172,7 +175,7 @@
       </div>
 
       <!-- What we do -->
-      <section class="what_we_do" id="services">
+      <section class="what_we_do" id="services" aria-label="what-we-do">
         <div class="what_we_do__heading">
           <h2 class="what_we_do--title">What we do</h2>
           <span class="what_we_do--title-underline"></span>
@@ -181,7 +184,7 @@
       </section>
 
       <!-- Our mission -->
-      <section class="our_mission">
+      <section class="our_mission" aria-label="our-mission">
         <div class="our_mission__left">
           <img
             class="our_mission__left--banner"
@@ -206,7 +209,7 @@
       </section>
 
       <!-- Our team -->
-      <section class="our_team" id="team">
+      <section class="our_team" id="team" aria-label="our-team">
         <div class="our_team__heading">
           <h2 class="our_team__heading--title">Meet our Team</h2>
           <span class="our_team__heading--underline"></span>
@@ -238,7 +241,7 @@
       </section>
 
       <!-- Testimonials -->
-      <section class="testimonials">
+      <section class="testimonials" aria-label="testimonials">
         <div class="testimonials__heading">
           <h2 class="testimonials__heading--title">What people say about us</h2>
           <span class="testimonials__heading--underline"></span>
@@ -580,7 +583,7 @@
       </section>
 
       <!-- Work with us -->
-      <section class="work_with_us" id="contact">
+      <section class="work_with_us" id="contact" aria-label="work-with-us">
         <h3 class="work_with_us--title">WANT TO WORK WITH US</h3>
         <p class="work_with_us--description">
           They way doctors treat injury infections may n wrong and antibiotic
@@ -593,10 +596,11 @@
           name="work_with_us-email"
           id=""
           placeholder="Email"
+          aria-label="Enter your email"
         />
       </section>
 
-      <footer class="footer">
+      <footer class="footer" aria-label="footer">
         <div class="footer__left">
           <p class="footer__left--text">@ copyright technoFevers.com</p>
           <p class="footer__left--text">All rights reserved</p>
@@ -606,26 +610,31 @@
             class="footer__right--icon"
             src="/assets/icons/youtube.png"
             alt=""
+            aria-label="youtube-channel"
           />
           <img
             class="footer__right--icon"
             src="/assets/icons/twitter.png"
             alt=""
+            aria-label="twitter-link"
           />
           <img
             class="footer__right--icon"
             src="/assets/icons/facebook.png"
             alt=""
+            aria-label="facebook-link"
           />
           <img
             class="footer__right--icon"
             src="/assets/icons/instagram.png"
             alt=""
+            aria-label="instagram-link"
           />
           <img
             class="footer__right--icon"
             src="/assets/icons/linkedin.png"
             alt=""
+            aria-label="linkedin-link"
           />
         </div>
       </footer>
