@@ -25,6 +25,7 @@
   &__title{  
     &--heading{
       margin-bottom: utils.rem(10);
+      text-transform: uppercase;
     }
     &--div{
       display: flex;
@@ -58,6 +59,11 @@
   &__feature{
     @include flex.flex-container(column, center, center);
     margin: 0;
+    &::hover{
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    
 
     &:not(:last-child){
       margin-right: 10px

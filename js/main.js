@@ -1,10 +1,12 @@
-import render from './renderTeamMembers'
 import initCarousel from './carousel';
 import renderSpecialities from './renderSpecialities';
 import renderServices from './renderServices';
+import { initMenu } from './initMobileMenu';
+import initTestimonialCarousel from './initTestimonials';
 
 document.addEventListener('DOMContentLoaded', () => {
-    render();
+    initMenu();
+    initTestimonialCarousel();
     renderSpecialities();
     renderServices();
     initCarousel();

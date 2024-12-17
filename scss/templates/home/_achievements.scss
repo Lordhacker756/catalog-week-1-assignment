@@ -17,6 +17,11 @@
         font-weight: 700;
         color: white;
         margin-bottom: 0;
+
+        @include utils.breakpoint-down(mobile) {
+            text-align: center;
+            font-size: utils.rem(28);
+        }
     }
 
     &__description{
@@ -25,29 +30,54 @@
         color: white;
         text-align: center;
         width: 60%;
+
+        @include utils.breakpoint-down(mobile) {
+            width: 100%;
+        }
     }
 
-    &__stats{
+   &__stats {
         @include flex.flex-container(row, space-around, center);
         width: 80%;
         padding: $padding-medium;
-        gap: 3rem
+        gap: 3rem;
 
+        @include utils.breakpoint-down(mobile) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            gap: 2rem;
+            text-align: center;
+        }
     }
 
-    &__stat{
-         &--value{
-            font-size: utils.rem(40);
-        font-weight: 700;
-        color: white;
-        margin: 0;
+    &__stat {
+        @include utils.breakpoint-down(mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        &--title{
+        &--value {
+            font-size: utils.rem(40);
+            font-weight: 700;
+            color: white;
+            margin: 0;
+
+            @include utils.breakpoint-down(mobile) {
+                font-size: utils.rem(32);
+            }
+        }
+
+        &--title {
             font-size: utils.rem(14);
-        font-weight: 400;
-        color: white;
-        margin: 0;
+            font-weight: 400;
+            color: white;
+            margin: 0;
+
+            @include utils.breakpoint-down(mobile) {
+                font-size: utils.rem(12);
+            }
         }
     }
 }

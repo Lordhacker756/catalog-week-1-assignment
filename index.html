@@ -58,11 +58,24 @@
       <img src="assets/images/logo.svg" alt="Logo" class="navbar__logo" />
       <ul class="navbar__links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
+      <div class="navbar__mobile-menu">
+        <ul class="navbar__mobile-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <img src="assets/icons/cross.svg" alt="Close" class="navbar__close" />
+      <button class="navbar__menu-btn">
+        <img src="assets/icons/hamburger.svg" alt="Menu" class="navbar__menu" />
+      </button>
     </header>
     <main>
       <!-- Hero -->
@@ -87,7 +100,7 @@
       </section>
 
       <!-- About -->
-      <section class="about">
+      <section class="about" id="about">
         <div class="about__title--div">
           <h2 class="about__title--heading">About Us</h2>
           <span class="about__underline"></span>
@@ -159,7 +172,7 @@
       </div>
 
       <!-- What we do -->
-      <section class="what_we_do">
+      <section class="what_we_do" id="services">
         <div class="what_we_do__heading">
           <h2 class="what_we_do--title">What we do</h2>
           <span class="what_we_do--title-underline"></span>
@@ -193,7 +206,7 @@
       </section>
 
       <!-- Our team -->
-      <section class="our_team">
+      <section class="our_team" id="team">
         <div class="our_team__heading">
           <h2 class="our_team__heading--title">Meet our Team</h2>
           <span class="our_team__heading--underline"></span>
@@ -213,7 +226,7 @@
             <div class="carousel__container"></div>
           </div>
           <button class="carousel__button carousel__button--right">
-            <p>Nexts</p>
+            <p>Next</p>
             <img
               src="/assets/icons/right_arrow.svg"
               alt="Arrow Right"
@@ -567,7 +580,7 @@
       </section>
 
       <!-- Work with us -->
-      <section class="work_with_us">
+      <section class="work_with_us" id="contact">
         <h3 class="work_with_us--title">WANT TO WORK WITH US</h3>
         <p class="work_with_us--description">
           They way doctors treat injury infections may n wrong and antibiotic

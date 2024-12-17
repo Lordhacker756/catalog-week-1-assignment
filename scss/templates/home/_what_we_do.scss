@@ -8,10 +8,15 @@
      &__heading{
         width: 30%;
         text-align: center;
+
+        @include utils.breakpoint-down(tablet){
+            width: 80%;
+        }
     }
     
     &--title{
         margin-bottom: 0.625rem;
+        text-transform: uppercase;
     }
 
     &--title-underline{
@@ -37,6 +42,11 @@
             z-index: 10;
             background-color: white;
             height: utils.rem(400);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover{
+                transform: scale(1.05);
+            }
 
             &--title{
                 font-size: utils.rem(22);

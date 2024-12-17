@@ -7,9 +7,19 @@
     @include flex.flex-container(row, space-between, center);
     padding: 0 $padding-large $padding-large $padding-large;
 
+    @include utils.breakpoint-down(mobile){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__left--text{
         color: rgba(85, 61, 103, 1);
         font-size: utils.rem(14);
+
+        @include utils.breakpoint-down(mobile){
+            text-align: center;
+        }
     }
 
     &__right--icon{
@@ -17,5 +27,11 @@
         height: 2rem;
         object-fit: contain;
         margin-left: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover{
+            transform: scale(1.1);
+        }
     }
 }

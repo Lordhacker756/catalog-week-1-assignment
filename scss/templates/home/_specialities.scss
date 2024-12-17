@@ -17,6 +17,12 @@
         padding: $padding-medium;
         z-index: 10;
         background-color: white;
+        transition: all 0.3s ease;
+
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
 
         &--title{
             font-size: utils.rem(26);

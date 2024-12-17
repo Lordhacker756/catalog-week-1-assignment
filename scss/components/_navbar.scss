@@ -1,11 +1,33 @@
 @use "../abstract/variables" as *;
-@use "../layouts/grid" as grid;
 @use "../layouts/flex" as flex;
 @use "../utils" as utils;
 
 .navbar {
   @include flex.flex-container(column,center,center);
   padding: 1rem;
+  position: relative;
+
+  @include utils.breakpoint-down(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__close {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 102;
+
+  @include utils.breakpoint-down(tablet) {
+    &.active {
+      display: block;
+    }
+  }
+}
 
   &__logo {
     height: utils.rem(50);
@@ -13,15 +35,84 @@
     cursor: pointer;
   }
 
-  &__title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: $secondary-color;
-  }
-
   &__links {
     @extend .flex__container;
     @extend .flex__container--end;
     gap: 2rem;
+
+    @include utils.breakpoint-down(tablet) {
+      display: none;
+    }
+  }
+
+  
+
+  &__mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    z-index: 100;
+    
+    &.active {
+      display: block;
+    }
+  }
+
+  &__mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    padding-top: 4rem;
+
+    li {
+      opacity: 0;
+      transform: translateY(20px);
+      
+      &.fade-in {
+        animation: fadeIn 0.5s ease forwards;
+      }
+    }
+
+    a {
+      color: white;
+      font-size: 1.5rem;
+      
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+
+    @include utils.breakpoint-down(tablet) {
+      display: block;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

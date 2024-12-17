@@ -14,10 +14,15 @@
     &--title {
       text-align: center;
       margin-bottom: 0.625rem;
+      text-transform: uppercase;
+
+      @include utils.breakpoint-down(mobile){
+        font-size: 2.5rem;
+      }
     }
       &--underline{
     background: theme.$secondary-color;
-    width: 80%;
+    width: 40%;
     height: 2px;
     display: block;
     margin: auto;
@@ -27,6 +32,20 @@
 
   &__cards{
     @extend .carousel__container;
+    transition: transform 0.3s ease;
+
+    &--controls{
+      width: 100%;
+    @include flex.flex-container(row, end, center);
+
+    }
+
+    &--prev, &--next{
+      background: transparent;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 
   &__card{

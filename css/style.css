@@ -3,6 +3,8 @@ html {
   margin: 0;
   padding: 0;
   font-size: 100%;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in;
 }
 
 *,
@@ -14,6 +16,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 li {
@@ -71,7 +74,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1rem, 3rem, 3rem);
+  font-size: clamp(1rem, 2.5rem, 3rem);
   font-weight: 400;
   position: relative;
 }
@@ -119,21 +122,104 @@ p {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  position: relative;
+}
+@media (max-width: 63.99875rem) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.navbar__close {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 102;
+}
+@media (max-width: 63.99875rem) {
+  .navbar__close.active {
+    display: block;
+  }
 }
 .navbar__logo {
   height: 3.125rem;
   width: 3.125rem;
   cursor: pointer;
 }
-.navbar__title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #F64C72;
-}
 .navbar__links {
   gap: 2rem;
 }
+@media (max-width: 63.99875rem) {
+  .navbar__links {
+    display: none;
+  }
+}
+.navbar__mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+}
+.navbar__mobile-menu.active {
+  display: block;
+}
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  padding-top: 4rem;
+}
+.navbar__mobile-links li {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.navbar__mobile-links li.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+.navbar__mobile-links a {
+  color: white;
+  font-size: 1.5rem;
+}
+.navbar__mobile-links a:hover {
+  color: #F64C72;
+}
+.navbar__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+@media (max-width: 63.99875rem) {
+  .navbar__menu-btn {
+    display: block;
+  }
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .btn, .our_mission__right--button, .hero__cta--button {
   cursor: pointer;
   padding: 0.75rem 2rem;
@@ -307,6 +393,7 @@ p {
 }
 .about__title--heading {
   margin-bottom: 0.625rem;
+  text-transform: uppercase;
 }
 .about__title--div {
   display: flex;
@@ -348,6 +435,10 @@ p {
   margin: 0;
   width: auto; /* Or a specific width that accommodates the steps and spacing */
   flex-wrap: nowrap;
+}
+.about__feature::hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 .about__feature:not(:last-child) {
   margin-right: 10px;
@@ -413,6 +504,12 @@ p {
 .our_team__heading--title {
   text-align: center;
   margin-bottom: 0.625rem;
+  text-transform: uppercase;
+}
+@media (max-width: 47.99875rem) {
+  .our_team__heading--title {
+    font-size: 2.5rem;
+  }
 }
 .our_team__heading--underline {
   background: #F64C72;
@@ -486,6 +583,7 @@ p {
   padding: 0 3rem;
   background-color: white;
   position: relative;
+  width: 100vw;
 }
 .carousel__button {
   border: none;
@@ -606,6 +704,11 @@ p {
   padding: 2rem;
   z-index: 10;
   background-color: white;
+  transition: all 0.3s ease;
+}
+.specialities__card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 .specialities__card--title {
   font-size: 1.625rem;
@@ -636,12 +739,23 @@ p {
   color: white;
   margin-bottom: 0;
 }
+@media (max-width: 47.99875rem) {
+  .achievements__title {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+}
 .achievements__description {
   font-size: 1.125rem;
   font-weight: 400;
   color: white;
   text-align: center;
   width: 60%;
+}
+@media (max-width: 47.99875rem) {
+  .achievements__description {
+    width: 100%;
+  }
 }
 .achievements__stats {
   display: flex;
@@ -653,17 +767,43 @@ p {
   padding: 2rem;
   gap: 3rem;
 }
+@media (max-width: 47.99875rem) {
+  .achievements__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+@media (max-width: 47.99875rem) {
+  .achievements__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .achievements__stat--value {
   font-size: 2.5rem;
   font-weight: 700;
   color: white;
   margin: 0;
 }
+@media (max-width: 47.99875rem) {
+  .achievements__stat--value {
+    font-size: 2rem;
+  }
+}
 .achievements__stat--title {
   font-size: 0.875rem;
   font-weight: 400;
   color: white;
   margin: 0;
+}
+@media (max-width: 47.99875rem) {
+  .achievements__stat--title {
+    font-size: 0.75rem;
+  }
 }
 
 .what_we_do {
@@ -677,8 +817,14 @@ p {
   width: 30%;
   text-align: center;
 }
+@media (max-width: 63.99875rem) {
+  .what_we_do__heading {
+    width: 80%;
+  }
+}
 .what_we_do--title {
   margin-bottom: 0.625rem;
+  text-transform: uppercase;
 }
 .what_we_do--title-underline {
   background: #F64C72;
@@ -709,6 +855,11 @@ p {
   z-index: 10;
   background-color: white;
   height: 25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.what_we_do__card:hover {
+  transform: scale(1.05);
 }
 .what_we_do__card--title {
   font-size: 1.375rem;
@@ -727,10 +878,23 @@ p {
   gap: 0;
   margin-top: 7.5rem;
 }
+@media (max-width: 63.99875rem) {
+  .our_mission {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    justify-content: center;
+  }
+}
 .our_mission__left--banner {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (max-width: 63.99875rem) {
+  .our_mission__left {
+    display: none;
+  }
 }
 .our_mission__right {
   background-color: #F64C72;
@@ -740,6 +904,11 @@ p {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 63.99875rem) {
+  .our_mission__right {
+    padding: 2rem;
+  }
+}
 .our_mission__right--title {
   margin-top: 5rem;
   font-size: 2.5rem;
@@ -747,6 +916,11 @@ p {
   color: white;
   margin-bottom: 0;
   text-align: center;
+}
+@media (max-width: 63.99875rem) {
+  .our_mission__right--title {
+    margin-top: 0;
+  }
 }
 .our_mission__right--description {
   width: 70%;
@@ -767,14 +941,37 @@ p {
 .testimonials__heading--title {
   text-align: center;
   margin-bottom: 0.625rem;
+  text-transform: uppercase;
+}
+@media (max-width: 47.99875rem) {
+  .testimonials__heading--title {
+    font-size: 2.5rem;
+  }
 }
 .testimonials__heading--underline {
   background: #F64C72;
-  width: 80%;
+  width: 40%;
   height: 2px;
   display: block;
   margin: auto;
   margin-bottom: 2.5rem;
+}
+.testimonials__cards {
+  transition: transform 0.3s ease;
+}
+.testimonials__cards--controls {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+.testimonials__cards--prev, .testimonials__cards--next {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 .testimonials__card {
   padding: 1rem;
@@ -839,9 +1036,16 @@ p {
 .work_with_us--title {
   margin-top: 5rem;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: white;
   margin-bottom: 0;
+  text-transform: uppercase;
+}
+@media (max-width: 47.99875rem) {
+  .work_with_us--title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 }
 .work_with_us--description {
   font-size: 1.125rem;
@@ -849,6 +1053,11 @@ p {
   color: white;
   text-align: center;
   width: 60%;
+}
+@media (max-width: 47.99875rem) {
+  .work_with_us--description {
+    width: 100%;
+  }
 }
 .work_with_us--email {
   border: 2px solid #BBC8D4;
@@ -862,6 +1071,11 @@ p {
     flex: 1;
   }
 }
+@media (max-width: 47.99875rem) {
+  .work_with_us--email {
+    width: 100%;
+  }
+}
 
 .footer {
   display: flex;
@@ -871,13 +1085,30 @@ p {
   align-items: center;
   padding: 0 3rem 3rem 3rem;
 }
+@media (max-width: 47.99875rem) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .footer__left--text {
   color: rgb(85, 61, 103);
   font-size: 0.875rem;
+}
+@media (max-width: 47.99875rem) {
+  .footer__left--text {
+    text-align: center;
+  }
 }
 .footer__right--icon {
   width: 2rem;
   height: 2rem;
   object-fit: contain;
   margin-left: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer__right--icon:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */
