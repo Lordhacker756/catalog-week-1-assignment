@@ -83,11 +83,3 @@ yarn start
 ```
 yarn build
 ```
-
-## Project Structure
-├── assets/         # Static assets
-├── constants/      # JSON data files
-├── css/           # Compiled CSS
-├── js/            # JavaScript modules
-├── scss/          # SCSS source files
-└── index.html     # Main HTML file
